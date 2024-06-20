@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a white overlay with transparency */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+main {
+  text-align: center;
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.register-container, .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.register-card, .login-card {
+  background-color: #f8f8f8;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.register-card h2, .login-card h2 {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.register-card label, .login-card label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #4a4a4a;
+}
+
+.register-card input, .login-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn-signup, .btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-signup:hover, .btn-login:hover {
+  background-color: #d81b60;
+}
+
+.register-card p, .login-card p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-card p a, .login-card p a {
+  color: #6200ea;
+  text-decoration: none;
+}
+
+.register-card p a:hover, .login-card p a:hover {
+  text-decoration: underline;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.register-card {
+  background-color: #f8f8f8;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.register-card h2 {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.register-card label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #4a4a4a;
+}
+
+.register-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn-signup {
+  width: 100%;
+  padding: 10px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-signup:hover {
+  background-color: #d81b60;
+}
+
+.register-card p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-card p a {
+  color: #6200ea;
+  text-decoration: none;
+}
+
+.register-card p a:hover {
+  text-decoration: underline;
+}
+
+.study-group {
+  text-align: center;
+  margin: 20px;
+}
+
+.timer, .goals, .help {
+  margin: 20px;
+}
+
+.timer .circle {
+  font-size: 3em;
+  margin: 10px 0;
+  border: 2px solid #6200ea;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6200ea;
+}
+
+.goals ul {
+  list-style: none;
+  padding: 0;
+}
+
+.goals li {
+  margin: 10px 0;
+}
+
+.help p {
+  margin: 10px 0;
+}
+
+.find-friends {
+  text-align: center;
+  margin: 20px;
+}
+
+.find-friends input, .find-friends select {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.find-friends ul {
+  list-style: none;
+  padding: 0;
+}
+
+.find-friends li {
+  margin: 10px 0;
+}
+
+.profile-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info h2 {
+  margin: 0;
+  color: #4a4a4a;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+.btn-chat, .btn-create {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-chat:hover, .btn-create:hover {
+  background-color: #d81b60;
+}
+
+.profile-rating {
+  margin-top: 10px;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.profile-tabs button {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-tabs button:hover {
+  background-color: #5a00d1;
+}
+
+.profile-content {
+  margin-top: 20px;
+}
+
+.post {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
