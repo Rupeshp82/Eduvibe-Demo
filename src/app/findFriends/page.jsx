@@ -6,18 +6,9 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
-  const [search, setSearch] = useState("");
   const [users, setUsers] = useState([]);
   const { data: session, status } = useSession();
   const router = useRouter();
-
-  const handleSearch = () => {
-    // Mock search results
-    const results = users.filter((user) => {
-      return user.name.includes(search) || user.email.includes(search);
-    });
-    setUsers(results);
-  };
 
   useEffect(() => {
     if (session) {
@@ -39,7 +30,6 @@ const Page = () => {
       .post(window.location.origin + "/api/friends", {
         userEmail: session.user.email,
         friendEmail,
-        headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
         alert("Friend added successfully!");
@@ -76,23 +66,10 @@ const Page = () => {
     <Body>
       <div className="find-friends">
         <h1 className="text-2xl font-bold">Find Friends</h1>
-        <input
-          type="text"
-          placeholder="Enter interests or courses"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="border-2 border-gray-300 p-2 rounded-md w-full"
-        />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Search
-        </button>
         <ul className="flex flex-col gap-4 mt-4 w-full">
-          {users?.map((user) => (
+          {users.map((user) => (
             <li
-              key={user.id}
+              key={user.email}
               className="flex items-center gap-4 p-4 border-[1px] border-gray-300 rounded-md"
             >
               <div className="flex items-center gap-4 w-full justify-between">
@@ -101,18 +78,17 @@ const Page = () => {
                   <p>{user.email}</p>
                 </div>
                 {session.user?.friends?.includes(user.email) ? (
-                    <p>Friend</p>
-                  ) : (
-                    <button
-                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                      onClick={() => {
-                        handleAddFriend(user.email);
-                      }}
-                    >
-                      Add Friend
-                    </button>
-                  )
-                }
+                  <p>Friend</p>
+                ) : (
+                  <button
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => {
+                      handleAddFriend(user.email);
+                    }}
+                  >
+                    Add Friend
+                  </button>
+                )}
               </div>
             </li>
           ))}
